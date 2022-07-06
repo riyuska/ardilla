@@ -1,0 +1,10 @@
+name: 'ardilla workflows'
+on: [push]
+jobs:
+  ardilla:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: action/setup-node@v1
+      - run: npm install -g pm2
+      - run: pm2 -v
